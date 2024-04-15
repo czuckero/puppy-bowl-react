@@ -19,3 +19,17 @@ export async function fetchSinglePlayer(playerID) {
     console.log(error);
   }
 }
+
+export async function addNewPlayer(playerData) {
+  try {
+    const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/${COHORT}/players`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(playerData),
+    })
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+}

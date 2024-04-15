@@ -6,6 +6,8 @@ export default function AllPlayers() {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null)
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useState("")
+  console.log(searchParams);
 
   useEffect(() => {
     async function getAllPlayers() {
@@ -20,13 +22,21 @@ export default function AllPlayers() {
     getAllPlayers();
   }, []);
 
+  const playersToDisplay = searchParams 
+    ? players.filter((player) => player.name.toLowerCase().includes(searchParams)) 
+    : players;
+
   return (
     <>
       <div>
         Search:
-        <input></input>
+        <input 
+          type="text" 
+          placeholder="Search" 
+          onChange={(e) => setSearchParams(e.target.value.toLowerCase())}
+        />
       </div>
-      {players.map((player) => {
+      {playersToDisplay.map((player) => {
         return (
           <h3 onClick={() => navigate(`/players/${player.id}`)} key={player.id}>{player.name}</h3>
         )
