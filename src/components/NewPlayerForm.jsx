@@ -19,17 +19,27 @@ export default function NewPlayerForm() {
       const response = await addNewPlayer(formData)
       const result = response.json()
       console.log(result);
-      setPlayerName('')
-      setBreed('')
-      setImageUrl('')
     } catch (error) {
       setError(error.message);
     }
+    setPlayerName('')
+    setBreed('')
+    setImageUrl('')
+    async function getAllPlayers() {
+        try {
+          const response = await fetchAllPlayers();
+          console.log(response.data.players);
+          setPlayers(response.data.players);
+        } catch (error) {
+          setError(error.message)
+        }
+      }
+    getAllPlayers()
   }
   return (
     <>
       <div className="new-player-form-container">
-      <h2>Add New Player</h2>
+      <h3>Add New Player</h3>
       <form onSubmit={handleSubmit}>
         <label>
           Player Name:
@@ -46,7 +56,7 @@ export default function NewPlayerForm() {
           <input value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} /><br>
           </br>
         </label>
-        <button>Submit</button>
+        <button>Add Player</button>
       </form>
       </div>
     </>

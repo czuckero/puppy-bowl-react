@@ -9,16 +9,17 @@ export default function AllPlayers() {
   const [searchParams, setSearchParams] = useState("")
   console.log(searchParams);
 
-  useEffect(() => {
-    async function getAllPlayers() {
-      try {
-        const response = await fetchAllPlayers();
-        console.log(response.data.players);
-        setPlayers(response.data.players);
-      } catch (error) {
-        setError(error.message)
-      }
+  async function getAllPlayers() {
+    try {
+      const response = await fetchAllPlayers();
+      console.log(response.data.players);
+      setPlayers(response.data.players);
+    } catch (error) {
+      setError(error.message)
     }
+  }
+
+  useEffect(() => {
     getAllPlayers();
   }, []);
 
@@ -28,19 +29,23 @@ export default function AllPlayers() {
 
   return (
     <>
-      <div>
-        Search:
-        <input 
-          type="text" 
-          placeholder="Search" 
-          onChange={(e) => setSearchParams(e.target.value.toLowerCase())}
-        />
-      </div>
+      <div className="all-players-container">
+        <h3>Currently Registered Players</h3>
+          <label>
+            Search:
+            <input 
+              type="text" 
+              placeholder="Search" 
+              onChange={(e) => setSearchParams(e.target.value.toLowerCase())}
+            />
+          </label>
       {playersToDisplay.map((player) => {
         return (
-          <h3 onClick={() => navigate(`/players/${player.id}`)} key={player.id}>{player.name}</h3>
+          <button onClick={() => navigate(`/players/${player.id}`)} key={player.id}>{player.name}</button>
         )
       })}
+      </div>
+
     </>
   )
 }

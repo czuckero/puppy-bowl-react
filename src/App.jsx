@@ -5,14 +5,15 @@ import { Routes, Route }from 'react-router-dom'
 import SinglePlayer from './components/SinglePlayer'
 import NewPlayerForm from './components/NewPlayerForm'
 
+
 function App() {
 
   return (
     <>
-      <h1>Puppy Bowl</h1>
       <Routes>
         <Route path='/' element={
-          <div>
+          <div className='app-container'>
+            <h1>Puppy Bowl</h1>
             <NewPlayerForm />
             <AllPlayers />
           </div>} >

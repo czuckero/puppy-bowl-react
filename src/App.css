@@ -18,6 +18,73 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.app-container {
+  background-color: rgb(225, 250, 253);
+  border: 2px solid black;
+  padding: 0px 30px 30px 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(207, 207, 207);
+}
+
+.all-players-container {
+  background-color:  white;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 20px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-players-container h3 {
+  text-decoration: rgb(0, 77, 128) underline;
+}
+
+.all-players-container input {
+  align-items: center;
+  width: 150px;
+  margin: 5px
+}
+
+.new-player-form-container {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0px 0px 10px 0px
+}
+
+.new-player-form-container h3 {
+  text-decoration: rgb(0, 77, 128) underline;
+}
+
+.new-player-form-container form input {
+  margin: 5px;
+}
+
+.single-player-container {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(225, 250, 253);
+}
+
+.single-player-container img {
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 375px;
+}
+
+.single-player-container-2 {
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.single-player-container-2 h2 {
+  text-decoration: rgb(0, 77, 128) underline;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

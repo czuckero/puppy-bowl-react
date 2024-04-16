@@ -33,11 +33,12 @@ export default function SinglePlayer() {
   }
   
   return (
-    <div>
+    <div className="single-player-container">
+      <div className="single-player-container-2">
       {/* <h2>Single Player {id}</h2> */}
       {
         player && 
-          <div>
+          <div className='single-player-containter-2'>
             <h2>{player.name}</h2>
             <h3>ID: #{player.id}</h3>
             <p>Breed: {player.breed}</p>
@@ -46,6 +47,7 @@ export default function SinglePlayer() {
       }
       <button onClick={() => removePlayer()}>Remove Player</button>
       <button onClick={() => navigate('/')}>Back to Players</button>
+      </div>
     </div>
   )
 }
