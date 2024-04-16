@@ -25,16 +25,6 @@ export default function NewPlayerForm() {
     setPlayerName('')
     setBreed('')
     setImageUrl('')
-    async function getAllPlayers() {
-        try {
-          const response = await fetchAllPlayers();
-          console.log(response.data.players);
-          setPlayers(response.data.players);
-        } catch (error) {
-          setError(error.message)
-        }
-      }
-    getAllPlayers()
   }
   return (
     <>

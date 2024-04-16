@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import AllPlayers from './components/AllPlayers'
 import { Routes, Route }from 'react-router-dom'
