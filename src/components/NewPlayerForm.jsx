@@ -19,6 +19,9 @@ export default function NewPlayerForm() {
       const response = await addNewPlayer(formData)
       const result = response.json()
       console.log(result);
+      setPlayerName('')
+      setBreed('')
+      setImageUrl('')
     } catch (error) {
       setError(error.message);
     }

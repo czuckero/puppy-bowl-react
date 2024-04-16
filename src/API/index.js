@@ -33,3 +33,15 @@ export async function addNewPlayer(playerData) {
     console.log(error);
   }
 }
+
+export async function deletePlayer(playerID) {
+  try {
+    const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/${COHORT}/players/${playerID}`, {
+      method: 'DELETE'
+    })
+    const result = response.json()
+    return result
+  } catch (error) {
+    console.log(error);
+  }
+}
