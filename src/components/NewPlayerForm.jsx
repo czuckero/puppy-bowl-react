@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { addNewPlayer } from '../API'
 
-export default function NewPlayerForm() {
+export default function NewPlayerForm({updateAllPlayers}) {
   const [playerName, setPlayerName] = useState('')
   const [breed, setBreed] = useState('')
   const [imageUrl, setImageUrl] = useState('')
@@ -25,6 +25,7 @@ export default function NewPlayerForm() {
     setPlayerName('')
     setBreed('')
     setImageUrl('')
+    updateAllPlayers()
   }
   return (
     <>
