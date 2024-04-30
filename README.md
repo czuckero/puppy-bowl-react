@@ -8,5 +8,5 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 netlify deploy:
+https://splendid-starship-0ba801.netlify.app
 https://app.netlify.com/sites/splendid-starship-0ba801/deploys/661e34d28431f107cf9a32fc
-https://app.netlify.com/sites/splendid-starship-0ba801/overview
